@@ -146,5 +146,10 @@ body {
   text-shadow: 1px solid black;
 }
 .side-bar a:hover {
-  text-shadow: 2px 2px rgb(0, 0, 0);
+  text-shadow: 2px 3px rgb(53, 53, 53);
+}
+@media (max-width: 630px) {
+  #search-box::placeholder {
+    opacity: 0;
+  }
 }
