@@ -6,8 +6,12 @@ body {
 }
 
 :root {
-  --header-color: rgb(0, 57, 104);
+  /* --header-color: rgb(0, 57, 104);
   --icon-color: rgba(255, 255, 255, 0.26);
+  --side-bar-color: rgb(3, 75, 134); */
+  --header-color: rgb(94, 190, 197);
+  --icon-color: rgba(255, 255, 255, 0.26);
+  --side-bar-color: rgb(117, 117, 117);
 }
 
 .main-header {
@@ -110,4 +114,31 @@ body {
   #main-header {
     gap: 15vw;
   }
+}
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  background-color: var(--side-bar-color);
+  width: 160px;
+  height: 100vh;
+  padding-top: 0;
+}
+.side-bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px 0px;
+  padding-left: 16px;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+.side-bar a:first-child {
+  border-top: 0;
+}
+.side-bar a:last-child {
+  border-bottom: 3px solid white;
+}
+.side-bar a:hover {
+  text-shadow: 1px solid black;
 }
