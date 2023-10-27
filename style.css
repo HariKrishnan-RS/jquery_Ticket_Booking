@@ -104,6 +104,9 @@ body {
   background-color: rgba(255, 255, 255, 0.164);
   border-radius: 5px;
 }
+.search-box::placeholder {
+  padding-left: 20px;
+}
 @media (max-width: 700px) {
   #search-box {
     width: 100%;
@@ -141,4 +144,7 @@ body {
 }
 .side-bar a:hover {
   text-shadow: 1px solid black;
+}
+.side-bar a:hover {
+  text-shadow: 2px 2px rgb(0, 0, 0);
 }
