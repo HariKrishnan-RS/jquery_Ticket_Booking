@@ -22,7 +22,7 @@
   <body>
     <header class="main-header" id="main-header">
       <div class="header-left">
-        <i class="fa-solid fa-bars"></i>
+        <i onclick="hide()" class="fa-solid fa-bars"></i>
         <img
           class="logo-img"
           src="images/png-transparent-film-reel-cinema-film-movie-reel-thumbnail-removebg-preview.png"
@@ -42,16 +42,19 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-        <i class="fa-regular fa-bell"></i>
+        <i onclick="notification()" class="fa-regular fa-bell"></i>
       </div>
     </header>
-    <div class="side-bar" id="side-bar">
-      <a href="#">HOME</a>
-      <a href="#">MOVIES</a>
-      <a href="#">EVENTS</a>
-      <a href="#">PROFILE</a>
-      <a href="#">CONTACT</a>
+    <div class="body-bars">
+      <div class="side-bar" id="side-bar">
+        <a href="#">HOME</a>
+        <a href="#">OPTION</a>
+        <a href="#">OPTION</a>
+        <a href="#">OPTION</a>
+        <a href="#">OPTION</a>
+      </div>
+      <div class="main-bar"></div>
     </div>
-    <div class="main-bar"></div>
+    <script src="script.js"></script>
   </body>
 </html>

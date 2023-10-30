@@ -14,7 +14,7 @@ body {
   --side-bar-color: rgb(117, 117, 117);
 }
 
-.main-header {
+#main-header {
   background-color: var(--header-color);
   display: flex;
   align-items: center;
@@ -22,6 +22,8 @@ body {
   padding: 0px 30px;
   overflow: hidden;
   gap: 20px;
+  position: sticky;
+  top: 0;
 }
 .logo-img {
   width: 50px;
@@ -72,6 +74,7 @@ body {
 }
 .search-form {
   display: flex;
+
   width: 100%;
   gap: 25px;
 }
@@ -124,7 +127,7 @@ body {
   padding: 10px 20px;
   background-color: var(--side-bar-color);
   width: 160px;
-  height: 100vh;
+  padding-bottom: 100%;
   padding-top: 0;
 }
 .side-bar a {
@@ -152,4 +155,71 @@ body {
   #search-box::placeholder {
     opacity: 0;
   }
+}
+
+.body-bars {
+  display: flex;
+}
+.main-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  margin: 20px;
+  gap: 20px;
+  align-content: start;
+}
+@media (max-width: 1200px) {
+  .main-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .main-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.main-bar div {
+  height: fit-content;
+  justify-self: center;
+}
+.movie-img {
+  width: 100%;
+  border-radius: 10px;
+}
+.movie-name {
+  margin: 10px 0px;
+  font-size: 25px;
+  color: rgb(1, 19, 77);
+}
+
+.movie-dis {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+.main-bar div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  padding: 10px;
+}
+.book-tic-lnk {
+  text-decoration: none;
+  background-color: rgb(255, 72, 40);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+}
+.book-tic-lnk:hover {
+  background-color: rgb(233, 95, 71);
+}
+
+.hide {
+  display: none;
 }
