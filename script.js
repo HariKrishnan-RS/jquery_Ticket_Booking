@@ -1,8 +1,59 @@
 let movieAry = JSON.parse(localStorage.getItem('movies'));
+if (movieAry == null) {
+  movieAry = [];
+}
 let movie_count = movieAry.length;
 let movieId = 0;
 let nameary = JSON.parse(localStorage.getItem('names'));
 let i = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  if (
+    !localStorage.getItem('T1') &&
+    !localStorage.getItem('T2') &&
+    !localStorage.getItem('T3')
+  ) {
+    localStorage.setItem('T1', JSON.stringify([]));
+    localStorage.setItem('T2', JSON.stringify([]));
+    localStorage.setItem('T3', JSON.stringify([]));
+
+    let ary = [
+      'm1',
+      'm2',
+      'm3',
+      'm4',
+      'm5',
+      'm6',
+      'm7',
+      'm8',
+      'm9',
+      'm10',
+      'm11',
+      'm12',
+      'm13',
+      'm14',
+      'm15',
+    ];
+    localStorage.setItem('movies', JSON.stringify(ary));
+    ary = [
+      'Movie Name',
+      'Movie Name',
+      'Movie Name',
+      'Movie Name',
+      'Movie Name',
+      'Cool Movie',
+      'Old Movie',
+      'Fast Name',
+      'Slow Name',
+      'slow Name',
+      'slow Name',
+      'Movie fast',
+      'Movie New',
+      'New Name',
+      'Horrer Movie',
+    ];
+    localStorage.setItem('names', JSON.stringify(ary));
+  }
+});
 function notification() {
   window.location.href = 'notification.html';
 }
@@ -72,10 +123,16 @@ function hide() {
 }
 const reset = document.querySelector('body');
 function resetfun(e) {
-  if (e.key == 'Enter') {
+  if (e.key == 'Enter' && e.shiftKey == true) {
     localStorage.setItem('T1', JSON.stringify([]));
     localStorage.setItem('T2', JSON.stringify([]));
     localStorage.setItem('T3', JSON.stringify([]));
+    localStorage.removeItem('T1');
+    localStorage.removeItem('T2');
+    localStorage.removeItem('T3');
+    localStorage.removeItem('n');
+    localStorage.removeItem('names');
+    localStorage.removeItem('movies');
   }
 }
 reset.addEventListener('keypress', resetfun);
