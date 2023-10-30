@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'Horrer Movie',
     ];
     localStorage.setItem('names', JSON.stringify(ary));
+    sessionStorage.setItem('clickedMovieId', JSON.stringify(''));
   }
 });
 function notification() {
