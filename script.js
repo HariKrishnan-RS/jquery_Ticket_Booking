@@ -1,6 +1,6 @@
 let movieAry = JSON.parse(localStorage.getItem('movies'));
 if (movieAry == null) {
-  movieAry = [];
+  movieAry = ['m1'];
 }
 let movie_count = movieAry.length;
 let movieId = 0;
