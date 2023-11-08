@@ -1,3 +1,128 @@
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+  margin: 0;
+}
+:root {
+  /* --header-color: rgb(0, 57, 104);
+  --icon-color: rgba(255, 255, 255, 0.26);
+  --side-bar-color: rgb(3, 75, 134); */
+  --header-color: rgb(94, 190, 197);
+  --icon-color: rgba(255, 255, 255, 0.26);
+  --side-bar-color: rgb(117, 117, 117);
+}
+#main-header {
+  background-color: var(--header-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 30px;
+  overflow: hidden;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+.page-name {
+  font-size: 50px;
+  color: white;
+  margin: 20px 20px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.fa-bell {
+  font-size: 25px;
+  margin-left: 25px;
+  color: white;
+  padding: 7px;
+  margin-right: 20px;
+}
+.fa-bars {
+  color: white;
+  font-size: 26px;
+  margin-right: 25px;
+  padding: 7px;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+.fa-bars:hover {
+  background-color: var(--icon-color);
+}
+.fa-bell:hover {
+  background-color: var(--icon-color);
+  padding: 7px;
+  border-radius: 50px;
+}
+.fa-magnifying-glass {
+  font-size: 23px;
+}
+.fa-magnifying-glass :hover {
+  background-color: var(--icon-color);
+  padding: 7px;
+  border-radius: 50px;
+}
+.search-form {
+  display: flex;
+  opacity: 0;
+
+  width: 100%;
+  gap: 25px;
+}
+.search-btn {
+  border: 0;
+  background-color: var(--header-color);
+  color: white;
+  padding: 7px;
+  border-radius: 50px;
+}
+.search-btn:hover {
+  background-color: var(--icon-color);
+  padding: 7px;
+  border-radius: 50px;
+}
+.search-box {
+  width: 100%;
+  min-width: 200px;
+  max-width: 700px;
+  background-color: inherit;
+  border: 0;
+  border-bottom: 2px solid white;
+  font-size: 20px;
+  color: white;
+}
+.search-box:focus {
+  outline: none;
+  caret-color: white;
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.164);
+  border-radius: 5px;
+}
+.search-box::placeholder {
+  padding-left: 20px;
+}
+@media (max-width: 700px) {
+  #search-box {
+    width: 100%;
+    min-width: 0px;
+  }
+}
+@media (min-width: 1145px) {
+  #main-header {
+    gap: 15vw;
+  }
+}
 .theater-div label {
   padding: 10px;
   font-size: 20px;

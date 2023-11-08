@@ -6,7 +6,7 @@ let movie_count = movieAry.length;
 let movieId = 0;
 let nameary = JSON.parse(localStorage.getItem('names'));
 let i = 0;
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
   if (
     !localStorage.getItem('T1') &&
     !localStorage.getItem('T2') &&
@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
     localStorage.setItem('movies', JSON.stringify(ary));
     ary = [
-      'Movie Name',
-      'Movie Name',
-      'Movie Name',
-      'Movie Name',
-      'Movie Name',
+      'Spider Man',
+      'I am Born',
+      'Flight 336',
+      'Future City',
+      'Migration',
       'Cool Movie',
       'Old Movie',
       'Fast Name',
@@ -58,72 +58,70 @@ document.addEventListener('DOMContentLoaded', function () {
 function notification() {
   window.location.href = 'notification.html';
 }
-
-movieAry.forEach((element) => {
-  const mainBar = document.querySelector('.main-bar');
-  const div = document.createElement('div');
-  const img = document.createElement('img');
-  const a = document.createElement('a');
-  const h1 = document.createElement('H1');
-  const p = document.createElement('P');
-  div.className = 'movie-cell';
-  img.className = 'movie-img';
-  img.src = `movies-img/${element}.jpg`;
-  h1.className = 'movie-name';
-  h1.innerText = nameary[i];
-  i++;
-  p.innerHTML = '<b>N</b>';
-  p.append(
-    'ost rum dolk orum, l abo re mini ma sim ilique sapienteitaque soluta consectetur!'
-  );
-  a.className = 'book-tic-lnk';
-  a.href = 'bookPage.html';
-  a.innerText = 'Book Ticket';
-  a.id = String(movieId);
-  movieId = movieId + 1;
-  div.appendChild(img);
-  div.appendChild(h1);
-  div.appendChild(p);
-  div.appendChild(a);
-  mainBar.appendChild(div);
+$(function () {
+  movieAry.forEach((element) => {
+    const mainBar = $('.main-bar');
+    const div = $('<div>');
+    const img = $('<img>');
+    const a = $('<a>');
+    const h1 = $('<H1>');
+    const p = $('<P>');
+    div.addClass('movie-cell');
+    img.addClass('movie-img');
+    img.attr('src', `movies-img/${element}.jpg`);
+    h1.addClass('movie-name');
+    h1.html(nameary[i]);
+    i++;
+    p.html('<b>N</b>');
+    p.append(
+      'ost rum dolk orum, l abo re mini ma sim ilique sapienteitaque soluta consectetur!'
+    );
+    a.addClass('book-tic-lnk');
+    a.attr('href', 'bookPage.html');
+    a.text('Book Ticket');
+    a.attr('id', String(movieId));
+    movieId = movieId + 1;
+    div.append(img);
+    div.append(h1);
+    div.append(p);
+    div.append(a);
+    mainBar.append(div);
+  });
 });
 ///////////////////////////////////
-function clicked(e) {
-  const clickedMovieId = e.target.id;
-  const i = JSON.stringify(clickedMovieId);
-  sessionStorage.setItem('clickedMovieId', i);
-  console.log(e.target.className);
-  if (e.target.className == 'search-form') {
-    e.target.preventDefault();
-  }
-}
-const bookTicket = document.querySelector('.main-bar');
-bookTicket.addEventListener('click', clicked);
-///////////////////
-function keypressed(e) {
-  if (e.target.className == 'search-box') {
-    let value = e.target.value;
-    let movieNamelst = document.querySelectorAll('.movie-name');
-    movieNamelst.forEach((item) => {
-      let txt = item.innerText;
-      txt = txt.toLowerCase();
-      value = value.toLowerCase();
-      if (!txt.includes(value)) {
-        item.parentElement.style.display = 'none';
-      } else {
-        item.parentElement.style.display = 'flex';
-      }
-    });
-  }
-}
-const search = document.querySelector('.search-box');
-search.addEventListener('input', keypressed);
+$(document).ready(function () {
+  $('.main-bar').click(function (e) {
+    const clickedMovieId = e.target.id;
+    const i = JSON.stringify(clickedMovieId);
+    sessionStorage.setItem('clickedMovieId', i);
+    console.log(e.target.className);
+    if ($(e.target).hasClass('search-form')) {
+      e.preventDefault();
+    }
+  });
+});
+
+$(document).ready(function () {
+  $('.search-box').on('input', function (e) {
+    if ($(e.target).hasClass('search-box')) {
+      let value = $(e.target).val().toLowerCase();
+      let movieNamelst = $('.movie-name');
+      movieNamelst.each((index) => {
+        let txt = $(movieNamelst[index]).text().toLowerCase();
+        if (!txt.includes(value)) {
+          $(movieNamelst[index]).parent().css('display', 'none');
+        } else {
+          $(movieNamelst[index]).parent().css('display', 'flex');
+        }
+      });
+    }
+  });
+});
 function hide() {
-  const side = document.querySelector('.side-bar');
-  side.classList.toggle('hide');
+  $('.side-bar').toggleClass('hide');
 }
-const reset = document.querySelector('body');
-function resetfun(e) {
+
+$('body').on('keypress', function (e) {
   if (e.key == 'Enter' && e.shiftKey == true) {
     localStorage.setItem('T1', JSON.stringify([]));
     localStorage.setItem('T2', JSON.stringify([]));
@@ -135,5 +133,4 @@ function resetfun(e) {
     localStorage.removeItem('names');
     localStorage.removeItem('movies');
   }
-}
-reset.addEventListener('keypress', resetfun);
+});

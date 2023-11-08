@@ -130,3 +130,6 @@ function conform(e) {
 }
 const click = document.querySelector('body');
 click.addEventListener('click', conform);
+function notification() {
+  window.location.href = 'notification.html';
+}

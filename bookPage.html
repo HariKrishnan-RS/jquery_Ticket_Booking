@@ -4,9 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="bookPageStyle.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
   </head>
   <body>
+    <header class="main-header" id="main-header">
+      <div class="header-left">
+        <i onclick="hide()" class="fa-solid fa-bars"></i>
+        <img
+          class="logo-img"
+          src="images/png-transparent-film-reel-cinema-film-movie-reel-thumbnail-removebg-preview.png"
+        />
+        <h1 class="page-name">MovieQ</h1>
+      </div>
+      <div class="header-right">
+        <form class="search-form">
+          <input
+            class="search-box"
+            id="search-box"
+            type="text"
+            name="search"
+            placeholder="S e a r c h  M o v i e s . . ."
+            disabled
+          />
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <i onclick="notification()" class="fa-regular fa-bell"></i>
+      </div>
+    </header>
     <div class="selection">
       <div class="theater-div">
         <select name="theaters" id="theaters" class="theaters">
